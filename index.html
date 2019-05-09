@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">  <link rel="stylesheet" href="style.css">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron">
+          <h1 class="display-4">Mission to Mars</h1>
+          <a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a>
+        </div>
+      </div>
+
+  <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Latest Mars News<h1>
+            <h2>{{mars.news_title}}</h2>
+            <p>{{mars.news_p}}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+          <h1>Featured Mars Image</h1>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+          <img src={{mars.feature_image_url}} alt="feature image">
+        </div>
+        <div class="col-md-4">
+          <h1>Current Weather on Mars</h1>
+          <p>{{mars.mars_weather}}</p>
+          <table>{{mars.mars_facts}}</table>
+        </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
