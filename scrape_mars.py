@@ -29,7 +29,7 @@ def scrape():
     html=browser.html
     soup = BeautifulSoup(html, 'html.parser')
     gah=soup.find("a",class_="button fancybox")
-    feature_image_url=f'https://wwww.jpl.nasa.gov{gah["data-fancybox-href"]}'
+    feature_image_url=f'https://www.jpl.nasa.gov{gah["data-fancybox-href"]}'
     scraped_data["feature_image_url"]=feature_image_url
 
 
@@ -47,8 +47,8 @@ def scrape():
     tables=pd.read_html(url)
     mars_facts_df=tables[0]
     mars_facts = mars_facts_df.to_html()
-    mars_facts.replace('\n', '')
-    scraped_data["mars_facts"]=mars_facts
+    
+    scraped_data["mars_facts"] = mars_facts
 
 
     # Mars Hemispheres
@@ -56,6 +56,8 @@ def scrape():
     #browser.visit(url)
     #html=browser.html
     #soup=BeautifulSoup(html, 'html.parser')
+
+    browser.quit()
 
     return(scraped_data)
 
